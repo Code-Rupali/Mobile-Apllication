@@ -55,7 +55,7 @@ row.classList.add(`${mobile.brand}`)
     const form = document.querySelector('#mobile_form');
     container.insertBefore(div, form);
 
-    // Vanish in 3 seconds
+    // Vanish in 1 seconds
     setTimeout(() => document.querySelector('.alert').remove(), 1000);
   }
 
@@ -103,10 +103,10 @@ class Store {
   }
 }
 
-// Event: Display Books
+// Event: Display Mobiles
 
 
-// Event: Add a Book
+// Event: Add a Mobile
 document.querySelector('#mobile_form').addEventListener('submit', (e) => {
   // Prevent actual submit
   e.preventDefault();
@@ -123,7 +123,7 @@ const color = document.querySelector('#color').value;
   if(name === '' || brand === '' || price === '' || color === '' || ram === '' || rom === '') {
     UI.showAlert('Please fill in all fields','danger');
   } else {
-    // Instatiate book
+    // Instatiate mobile
     const mobile = new Mobile(name,brand,price,color,ram,rom);
 
     // Add Book to UI
@@ -144,12 +144,12 @@ const color = document.querySelector('#color').value;
   }
 });
  document.addEventListener('DOMContentLoaded', UI.displayMobiles('All'));
-// Event: Remove a Book
+// Event: Remove a Mobile
 document.querySelector('#mobilelist').addEventListener('click', (e) => {
-  // Remove book from UI
+  // Remove mobile from UI
   UI.deleteMobile(e.target);
 
-  // Remove book from store
+  // Remove mobile from store
   
   Store.removeMobile(e.target.parentElement.previousElementSibling.previousElementSibling.previousElementSibling.previousElementSibling.previousElementSibling.previousElementSibling.textContent);
 
@@ -184,7 +184,7 @@ mobileiteams.classList.remove('ho');
     iteams.classList.add('show');
 })
 
-
+// Filtter option (need to be fixed)
 const filterMobiles = document.querySelector('.filterMobiles');
 filterMobiles.addEventListener('click',(e)=>{
  const mobiles = document.querySelectorAll('tbody td');
