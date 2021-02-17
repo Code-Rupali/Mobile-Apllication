@@ -1,5 +1,4 @@
-// Book Class: Represents a Book
-// Book Class: Represents a Book
+// Mobile Class: Represents a Mobile
 class Mobile {
   constructor(name, brand, price,color,ram,rom) {
   this.name = name;
@@ -24,7 +23,16 @@ class UI {
     const list = document.querySelector('#mobilelist');
 
     const row = document.createElement('tr');
-row.classList.add(`${mobile.brand}`)
+row.classList.add(`${mobile.brand}`);
+if(mobile.price>=1000 && mobile.price<10000){
+  row.classList.add("low");
+}
+else if(mobile.price>=10000 && mobile.price<25000){
+row.classList.add("med");
+}
+else{
+  row.classList.add("high");
+}
     row.innerHTML = `
      <td>${mobile.name}</td> 
       <td>${mobile.brand}</td>
@@ -55,7 +63,7 @@ row.classList.add(`${mobile.brand}`)
     const form = document.querySelector('#mobile_form');
     container.insertBefore(div, form);
 
-    // Vanish in 3 seconds
+    // Vanish in 1 seconds
     setTimeout(() => document.querySelector('.alert').remove(), 1000);
   }
 
@@ -103,10 +111,10 @@ class Store {
   }
 }
 
-// Event: Display Books
+// Event: Display Mobiles
 
 
-// Event: Add a Book
+// Event: Add a Mobile
 document.querySelector('#mobile_form').addEventListener('submit', (e) => {
   // Prevent actual submit
   e.preventDefault();
@@ -123,13 +131,13 @@ const color = document.querySelector('#color').value;
   if(name === '' || brand === '' || price === '' || color === '' || ram === '' || rom === '') {
     UI.showAlert('Please fill in all fields','danger');
   } else {
-    // Instatiate book
+    // Instatiate mobile
     const mobile = new Mobile(name,brand,price,color,ram,rom);
 
-    // Add Book to UI
+    // Add Mobile to UI
     UI.addMobileToList(mobile);
 
-    // Add book to store
+    // Add mobile to store
     Store.addMobile(mobile);
 
     // Show success message
@@ -144,12 +152,12 @@ const color = document.querySelector('#color').value;
   }
 });
  document.addEventListener('DOMContentLoaded', UI.displayMobiles('All'));
-// Event: Remove a Book
+// Event: Remove a Mobile
 document.querySelector('#mobilelist').addEventListener('click', (e) => {
-  // Remove book from UI
+  // Remove mobile from UI
   UI.deleteMobile(e.target);
 
-  // Remove book from store
+  // Remove mobile from store
   
   Store.removeMobile(e.target.parentElement.previousElementSibling.previousElementSibling.previousElementSibling.previousElementSibling.previousElementSibling.previousElementSibling.textContent);
 
@@ -187,18 +195,20 @@ mobileiteams.classList.remove('ho');
 
 const filterMobiles = document.querySelector('.filterMobiles');
 filterMobiles.addEventListener('click',(e)=>{
- const mobiles = document.querySelectorAll('tbody td');
-  const m = document.querySelectorAll('tbody tr');
+ 
+  const mobiles = document.querySelectorAll('tbody tr');
  console.log(mobiles);
 switch(e.target.value){
   case 'all':
    mobiles.forEach((mobile)=> {
+    
+    
    mobile.style.display = 'flex';}
  )
     break;
     case 'nokia':
     mobiles.forEach((mobile)=> {
-      if(mobile.innerText == 'nokia'){
+      if(mobile.classList.contains('nokia')){
             mobile.style.display = 'flex';      
       }
       else{
@@ -208,71 +218,61 @@ switch(e.target.value){
  )
 break;
 case 'iphone':
-   mobiles.forEach((mobile) =>{
-      if(mobile.innerText == 'iphone'){
+    mobiles.forEach((mobile)=> {
+      if(mobile.classList.contains('iphone')){
             mobile.style.display = 'flex';      
       }
       else{
         mobile.style.display = 'none'; 
       }
-  }
-  
- );
-
+   }
+ )
 break;
-case 'oneplus':
-   mobiles.forEach((mobile) =>{
-   if(mobile.innerText == 'oneplus'){
+case 'onePlus':
+   mobiles.forEach((mobile)=> {
+      if(mobile.classList.contains('oneplus')){
             mobile.style.display = 'flex';      
       }
       else{
         mobile.style.display = 'none'; 
       }
-  }
-  
- );
-
+   }
+ )
 break;
 
 case 'low':
-  mobiles.forEach((mobile) =>{
-      if(parseInt(mobile) >= 1000 && parseInt(mobile) <10000){
-   mobile.style.display = 'flex';      
+  mobiles.forEach((mobile)=> {
+      if(mobile.classList.contains('low')){
+            mobile.style.display = 'flex';      
       }
       else{
         mobile.style.display = 'none'; 
       }
-  }
-  
- );
-
+   }
+ )
 break;
 case 'med':
-      mobiles.forEach((mobile) =>{
-      if(parseInt(mobile) >= 25000 && parseInt(mobile) <50000){
-   mobile.style.display = 'flex';      
+      mobiles.forEach((mobile)=> {
+      if(mobile.classList.contains('med')){
+            mobile.style.display = 'flex';      
       }
       else{
         mobile.style.display = 'none'; 
       }
-  }
-  
- );
-
+   }
+ )
 break;
 
 case 'high':
-      mobiles.forEach((mobile) =>{
-      if(parseInt(mobile) >=50000){
-   mobile.style.display = 'flex';      
+      mobiles.forEach((mobile)=> {
+      if(mobile.classList.contains('high')){
+            mobile.style.display = 'flex';      
       }
       else{
         mobile.style.display = 'none'; 
       }
-  }
-  
- );
-
+   }
+ )
 break;
 }})
 
