@@ -1,5 +1,5 @@
-// Book Class: Represents a Book
-// Book Class: Represents a Book
+
+// Mobile Class: Represents a Mobile
 class Mobile {
   constructor(name, brand, price,color,ram,rom) {
   this.name = name;
