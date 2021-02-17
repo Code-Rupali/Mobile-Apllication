@@ -1,4 +1,3 @@
-
 // Mobile Class: Represents a Mobile
 class Mobile {
   constructor(name, brand, price,color,ram,rom) {
