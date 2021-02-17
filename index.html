@@ -1,0 +1,77 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Mobile Application</title>
+    <link rel="stylesheet" href="./style.css" />
+  </head>
+  <body>
+    <!--nav-->
+    <nav>
+      <h1>Admin</h1>
+      <div class="buttons">
+        <!-- Add iteams-->
+        <button class="btn additeams">Add Mobiles</button>
+        <!--Display iteams-->
+        <button class="btn displayiteams">Display Mobiles</button>
+      </div>
+    </nav>
+    <!--Header-->
+    <header>
+      <h1>Welcome Admin!! Happy to have you again....</h1>
+    </header>
+    <!-- Form with 6 input fields-->
+    <div class="container">
+      <form id="mobile_form">
+        <button class="close">X</button>
+        <h1>Add Iteam</h1>
+        <div class="mb">
+          <input type="text" id="name" placeholder="Name" value="" />
+          <input type="text" id="brand" placeholder="Brand" />
+
+          <input type="text" id="price" placeholder="Price" />
+          <input type="text" id="color" placeholder="Color" />
+          <input type="text" id="ram" placeholder="RAM" />
+
+          <input type="text" id="rom" placeholder="ROM" />
+        </div>
+        <button type="submit" class="btn" id="sub-btn" value="Add">Add</button>
+      </form>
+
+      <!-- display in the form of a table-->
+      <div class="display">
+        <table class="table">
+          <thead>
+            <tr>
+              <th>Name</th>
+              <th>Brand</th>
+              <th>Price$</th>
+
+              <th>Color</th>
+              <th>RAM</th>
+              <th>ROM</th>
+              <th>Delete</th>
+
+              <th class="select">
+                <select name="mobiles" class="filterMobiles">
+                  <option value="all">All</option>
+                  <option value="nokia">Nokia</option>
+                  <option value="iphone">iphone</option>
+
+                  <option value="onePlus">OnePlus</option>
+                  <option value="low">Low</option>
+                  <option value="med">Med</option>
+                  <option value="high">High</option>
+                </select>
+              </th>
+            </tr>
+          </thead>
+          <tbody id="mobilelist"></tbody>
+        </table>
+      </div>
+    </div>
+    <script src="./app.js"></script>
+  </body>
+</html>

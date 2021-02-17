@@ -1,0 +1,183 @@
+* {
+  padding: 0;
+  margin: 0;
+  box-sizing: border-box;
+  font-family: sans-serif;
+}
+
+.close {
+  width: 40px;
+  height: 40px;
+  border: none;
+  font-weight: 1000;
+  color: #fff;
+  background-color: crimson;
+  transition: all 1s;
+}
+.close:focus {
+  outline: none;
+}
+.close:hover {
+  background-color: rgba(0, 0, 0, 0.267);
+  cursor: pointer;
+}
+.ho {
+  transform: translateY(0px);
+  opacity: 1;
+  display: block;
+}
+
+table {
+  margin: 2.5rem;
+  opacity: 0;
+  transform: translateY(30px);
+  display: none;
+  transition: all 1s ease;
+}
+
+tr {
+  display: flex;
+  height: 10vh;
+  width: 700px;
+  align-items: center;
+  justify-content: space-between;
+}
+thead tr {
+  font-size: 1.5rem;
+}
+td {
+  text-align: center;
+  display: flex;
+  justify-content: space-evenly;
+  align-items: center;
+}
+nav {
+  background-color: #333;
+  display: flex;
+  justify-content: space-between;
+}
+nav h1 {
+  margin: 1rem;
+  padding: 0.5rem 1rem;
+  color: aliceblue;
+  letter-spacing: 3px;
+}
+header {
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+}
+
+.btn {
+  margin: 1rem;
+  font-size: 18px;
+  padding: 1rem;
+  background-color: rgba(48, 162, 190, 0.877);
+  color: #fff;
+  transition: all 1s ease;
+  border: none;
+}
+
+.btn:focus {
+  outline: none;
+}
+
+.btn:hover {
+  cursor: pointer;
+  background-color: rgba(0, 0, 0, 0.253);
+}
+.inactive {
+  display: none;
+}
+.mb {
+  display: flex;
+  flex-direction: column;
+}
+form {
+  opacity: 0;
+  display: none;
+  transform: translateY(303px);
+  transition: all 10s ease-in-out;
+  margin: 4.1rem 4rem 0 4rem;
+}
+input {
+  border: none;
+  font-size: 18px;
+  border-bottom: 1px solid #333;
+  margin: 1rem 0;
+  width: 400px;
+}
+
+input:focus {
+  outline: none;
+}
+
+#sub-btn {
+  width: 10%;
+
+  margin: 1rem 0;
+}
+
+.show {
+  transform: translateY(0px);
+  opacity: 1;
+  display: block;
+}
+td a {
+  text-decoration: none;
+}
+.danger {
+  position: absolute;
+  top: 12%;
+  background-color: rgb(185, 20, 20);
+  font-size: 18px;
+  color: aliceblue;
+  display: inline;
+  padding: 1rem;
+  margin: 1rem;
+}
+.success {
+  position: absolute;
+  top: 12%;
+  background-color: rgb(20, 185, 89);
+  font-size: 18px;
+  color: aliceblue;
+  display: inline;
+  padding: 1rem;
+  margin: 1rem;
+}
+
+select {
+  -webkit-appearance: none;
+  -moz-appearance: none;
+  appearance: none;
+  outline: none;
+  border: 2px solid rgba(48, 162, 190, 0.877);
+}
+.select {
+  margin: 1rem;
+  position: relative;
+  overflow: hidden;
+}
+select {
+  color: rgba(48, 162, 190, 0.877);
+  width: 10rem;
+  cursor: pointer;
+  padding: 1rem;
+}
+
+.select::after {
+  content: "\25BC";
+  position: absolute;
+  top: 0;
+  right: 0;
+  background-color: rgba(48, 162, 190, 0.877);
+  padding: 1rem;
+  pointer-events: none;
+  transition: all 0.5s ease-in-out;
+}
+.select:hover::after {
+  background-color: whitesmoke;
+  color: rgba(48, 162, 190, 0.877);
+}
