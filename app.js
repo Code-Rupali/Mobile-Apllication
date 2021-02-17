@@ -1,7 +1,4 @@
-<<<<<<< HEAD
-=======
 
->>>>>>> 1485746032dc2e6169e40538457984eea439eb72
 // Mobile Class: Represents a Mobile
 class Mobile {
   constructor(name, brand, price,color,ram,rom) {
